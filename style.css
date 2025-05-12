@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -5,34 +6,43 @@
   box-sizing: border-box;
 }
 
+/* Container principal */
 .container {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(135deg, #996dff, #4d3780);
   padding: 10px;
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center; /* centraliza verticalmente, se desejar */
 }
 
+/* Área da lista do app */
 .lista-app {
   width: 100%;
   max-width: 540px;
   background: #fff;
-  margin: 100px auto 20px;
+  margin: 20px; /* espaçamento ao redor para telas menores */
   padding: 40px 30px 70px;
   border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Cabeçalho */
 .lista-app h2 {
   color: #4d3780;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  font-size: 1.8rem; /* tamanho fluido com rem */
 }
 
 .lista-app h2 img {
-  width: 30px;
+  width: 2rem; /* ajuste proporcional */
   margin-left: 10px;
 }
 
+/* Linha de entrada e botão */
 .row {
   display: flex;
   align-items: center;
@@ -41,43 +51,52 @@
   border-radius: 30px;
   padding-left: 20px;
   margin-bottom: 25px;
+  flex-wrap: wrap; /* quebra para telas menores */
 }
 
+/* Input de texto */
 input {
   flex: 1;
   border: none;
   outline: none;
   background: transparent;
   padding: 10px;
-  font-weight: 14px;
+  font-size: 1rem; /* tamanho relativo */
+  min-width: 160px;
 }
 
+/* Botão */
 button {
   border: none;
   outline: none;
   padding: 16px 50px;
   background: #996dff;
   color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   border-radius: 40px;
   transition: background 0.3s;
   user-select: none;
+  min-width: 120px;
 }
 
 button:hover {
   background: #7a55e0; /* cor ao passar o mouse */
 }
 
+/* Lista de tarefas */
 ul li {
   list-style: none;
-  font-size: 17px;
-  padding: 12px 8px 12px 50px;
+  font-size: 1.25rem; /* responsivo com rem */
+  padding: 16px 8px 12px 50px;
   user-select: none;
   cursor: pointer;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
+/* O marcador antes do item */
 ul li::before {
   content: "";
   position: absolute;
@@ -91,11 +110,67 @@ ul li::before {
   left: 8px;
 }
 
+/* Tarefa marcada */
 ul li.checked {
   color: #555;
   text-decoration: line-through;
 }
 
+/* ícone de checked */
 ul li.checked::before {
   background-image: url(images/checked.png);
+}
+
+/* botão de excluir dentro do item */
+ul li span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* efeito hover no ícone de excluir */
+ul li span:hover {
+  background: #edeef0;
+}
+
+/* Media queries para ajustar tamanhos em telas menores */
+@media (max-width: 600px) {
+  .lista-app {
+    padding: 30px 20px 50px;
+    margin: 10px;
+  }
+
+  .lista-app h2 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 14px 40px;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+
+  ul li {
+    font-size: 1.1rem;
+    padding: 14px 8px 10px 50px;
+  }
+
+  ul li span {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
 }
