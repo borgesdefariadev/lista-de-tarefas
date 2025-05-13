@@ -8,26 +8,32 @@
     <title>Lista de Tarefas</title>
   </head>
   <body>
-    <!-- container pai -->
+    <!-- Container principal que centraliza todo o conteúdo -->
     <div class="container">
-      <!-- div principal -->
+      <!-- Div que contém toda a aplicação de lista de tarefas -->
       <div class="lista-app">
-        <!-- lista -->
+        <!-- Cabeçalho com título da lista e um ícone ilustrativo -->
         <h2>Lista de Tarefas <img src="images/icon.png" /></h2>
+        <!-- Linha que agrupa o campo de entrada e o botão -->
         <div class="row">
+          <!-- Input para que o usuário possa digitar a nova tarefa -->
           <input
             type="text"
             id="input-box"
             placeholder="Adicione sua tarefa!"
           />
+          <!-- Botão que aciona a função addTask() ao clicar -->
           <button onClick="addTask()">Adicionar</button>
         </div>
+        <!-- Lista onde as tarefas serão exibidas dinamicamente -->
         <ul id="list-container">
-          <!-- <li class="checked">Tarefa</li> -->
+          <!-- Itens de tarefas serão inseridos aqui via JavaScript -->
+          <!-- exemplo de uma tarefa marcada como concluída: 
+          <li class="checked">Tarefa</li> -->
         </ul>
       </div>
     </div>
-    <!-- relação do codigo js -->
+    <!-- Inclusão do arquivo JavaScript que controla a lógica da lista -->
     <script src="script.js"></script>
   </body>
 </html>
