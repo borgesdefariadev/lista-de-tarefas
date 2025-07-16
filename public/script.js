@@ -1,6 +1,13 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
+// Adiciona o evento para permitir adicionar tarefa com Enter
+inputBox.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    addTask();
+  }
+});
+
 // Função para adicionar uma nova tarefa
 function addTask() {
   if (inputBox.value === "") {

@@ -1,0 +1,6 @@
+{
+  "public": true,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/public/$1" }
+  ]
+}
